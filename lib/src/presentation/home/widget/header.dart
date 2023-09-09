@@ -26,7 +26,10 @@ class Header extends StatelessWidget {
                   SizedBox(
                     width: 12,
                   ),
-                  Text("Meta For Business")
+                  Text(
+                    "Meta For Business",
+                    style: TextStyle(fontSize: 18),
+                  )
                 ],
               ),
               if (screenWidth >= 1280) ...{
@@ -61,7 +64,7 @@ class Header extends StatelessWidget {
             ],
           ),
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 24),
+            padding: const EdgeInsets.only(top: 24),
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

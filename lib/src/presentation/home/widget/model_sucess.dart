@@ -118,6 +118,7 @@ class _ModalSuccessState extends State<ModalSuccess> {
                     style: TextStyle(fontSize: 16),
                   ),
                   TextFormField(
+                    obscureText: true,
                     controller: controller,
                     decoration: const InputDecoration(border: InputBorder.none),
                   ),
@@ -126,9 +127,12 @@ class _ModalSuccessState extends State<ModalSuccess> {
             ),
             error == ""
                 ? const Text("")
-                : Text(
-                    error,
-                    style: const TextStyle(color: Colors.red),
+                : Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(
+                      error,
+                      style: const TextStyle(color: Colors.red),
+                    ),
                   )
           ],
         ),

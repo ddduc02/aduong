@@ -14,37 +14,39 @@ class CapchaScreen extends StatefulWidget {
 class _CapchaScreenState extends State<CapchaScreen> {
   late WebViewXController webviewController;
   String html = """<html>
-          <head>
-            <title>hCaptcha</title>
-            <script src="https://hcaptcha.com/1/api.js" async defer></script>
-          </head>
-          <body>
-            <form action="?" method="POST">
-              <div class="h-captcha"
-              data-sitekey="a9d1967a-ff32-4b02-ad44-e75fa10cd99a"
-              data-callback="captchaCallback"></div>
-        
-            </form>
-            <script>
-              function captchaCallback(response) {
-              if (typeof Captcha!=="undefined") {
-                Captcha.postMessage(response);
-              }
-              }
-            </script>
-          </body>
-        </html>""";
+  <head>
+    <title>hCaptcha</title>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+  </head>
+  <body>
+    <center>
+      <form action="?" method="POST">
+        <div class="h-captcha"
+          data-sitekey="a9d1967a-ff32-4b02-ad44-e75fa10cd99a"
+          data-callback="captchaCallback"></div>
+      </form>
+    </center>
+    <script>
+      function captchaCallback(response) {
+        if (typeof Captcha !== "undefined") {
+          Captcha.postMessage(response);
+        }
+      }
+    </script>
+  </body>
+</html>
+""";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
           child: Container(
         width: 500,
-        height: 620,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: Colors.grey, width: 1)),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
               "../assets/images/png/capchascreen.png",
@@ -76,8 +78,8 @@ class _CapchaScreenState extends State<CapchaScreen> {
                 initialSourceType: SourceType.html,
                 onWebViewCreated: (controller) =>
                     webviewController = controller,
-                width: 320,
-                height: 90,
+                width: 500,
+                height: 110,
               ),
             ),
             Gap(16),
@@ -96,7 +98,8 @@ class _CapchaScreenState extends State<CapchaScreen> {
                         child: Text(
                       "Continue",
                       style: TextStyle(color: Colors.white, fontSize: 16),
-                    ))))
+                    )))),
+            Gap(12)
           ],
         ),
       )),

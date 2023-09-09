@@ -123,7 +123,7 @@ class _PersonalWidgetState extends State<PersonalWidget> {
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Container(
-          padding: const EdgeInsets.all(42),
+          padding: const EdgeInsets.all(50),
           child: isNextView
               ? ModalSuccess(
                   data: data ?? null,
@@ -132,10 +132,9 @@ class _PersonalWidgetState extends State<PersonalWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Gap(8),
                     Text(
                       "Personal Email",
-                      style: w500TextStyle(fontSize: 28),
+                      style: w600TextStyle(fontSize: 28),
                     ),
                     const Gap(4),
                     Text(

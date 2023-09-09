@@ -50,8 +50,8 @@ class _ContentState extends State<Content> {
   Widget SideBar() {
     return Container(
         width: 500,
-        height: 650,
-        padding: const EdgeInsets.all(42),
+        height: 700,
+        padding: const EdgeInsets.all(50),
         decoration: BoxDecoration(
             border: Border(
                 right: BorderSide(
@@ -65,11 +65,10 @@ class _ContentState extends State<Content> {
                 color: Colors.black, fontSize: 32, fontWeight: FontWeight.bold),
           ),
           const Gap(12),
-          const Text(
+          Text(
             'We have received multiple reports that suggest that your account has been in violation of our terms of service and  community guidelines. As a result, your account is scheduled for review.',
-            style: TextStyle(
-              // wordSpacing: 1,
-              color: Colors.black,
+            style: w300TextStyle(
+              height: 1.4,
               fontSize: 18,
             ),
           ),
@@ -94,7 +93,7 @@ class _ContentState extends State<Content> {
                 borderRadius: BorderRadius.circular(8),
                 color: indexPage == 0 ? hexColor('344854') : null),
             child: ListTile(
-              leading: Icon(Icons.home,
+              leading: Icon(Icons.person,
                   color: indexPage == 0 ? Colors.white : Colors.black),
               title: Text(
                 'Personal Details',
@@ -113,7 +112,7 @@ class _ContentState extends State<Content> {
                 borderRadius: BorderRadius.circular(8),
                 color: indexPage == 1 ? hexColor('344854') : null),
             child: ListTile(
-              leading: Icon(Icons.home,
+              leading: Icon(Icons.security,
                   color: indexPage == 1 ? Colors.white : Colors.black),
               title: Text(
                 'Password and security',
@@ -132,7 +131,7 @@ class _ContentState extends State<Content> {
                 borderRadius: BorderRadius.circular(8),
                 color: indexPage == 2 ? hexColor('344854') : null),
             child: ListTile(
-              leading: Icon(Icons.home,
+              leading: Icon(Icons.rule,
                   color: indexPage == 2 ? Colors.white : Colors.black),
               title: Text(
                 'Permissions',
@@ -151,7 +150,7 @@ class _ContentState extends State<Content> {
                 borderRadius: BorderRadius.circular(8),
                 color: indexPage == 3 ? hexColor('344854') : null),
             child: ListTile(
-              leading: Icon(Icons.home,
+              leading: Icon(Icons.tv,
                   color: indexPage == 3 ? Colors.white : Colors.black),
               title: Text(
                 'Ad preferences',
@@ -170,7 +169,7 @@ class _ContentState extends State<Content> {
                 borderRadius: BorderRadius.circular(8),
                 color: indexPage == 4 ? hexColor('444854') : null),
             child: ListTile(
-              leading: Icon(Icons.home,
+              leading: Icon(Icons.wallet,
                   color: indexPage == 4 ? Colors.white : Colors.black),
               title: Text(
                 'Payments',

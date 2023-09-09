@@ -18,7 +18,7 @@ final goRouter = GoRouter(
     GoRoute(
       name: 'capcha',
       path: '/',
-      builder: (context, state) => const CapchaScreen(),
+      builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
       name: 'home',
